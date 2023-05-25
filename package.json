@@ -3,7 +3,9 @@
   "version": "0.0.1",
   "description": "basic d&d character sheet for web",
   "main": "index.js",
-  "scripts": {},
+  "scripts": {
+    "build": "webpack --mode=development"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/tanna1/dnd-sheet.git"
@@ -15,7 +17,8 @@
   },
   "homepage": "https://github.com/tanna1/dnd-sheet#readme",
   "dependencies": {
-    "firebase": "^9.22.1"
+    "firebase": "^9.22.1",
+    "jquery": "^3.7.0"
   },
   "devDependencies": {
     "webpack": "^5.84.1",
