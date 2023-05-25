@@ -1,2 +1,2 @@
 # dnd-sheet
-Web character sheet for D&amp;D
+A basic web character sheet for D&amp;D
