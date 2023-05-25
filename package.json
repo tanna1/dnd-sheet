@@ -1,0 +1,20 @@
+{
+  "name": "dnd-sheet",
+  "version": "0.0.1",
+  "description": "basic d&d character sheet for web",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tanna1/dnd-sheet.git"
+  },
+  "author": "tanna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tanna1/dnd-sheet/issues"
+  },
+  "homepage": "https://github.com/tanna1/dnd-sheet#readme",
+  "dependencies": {
+    "firebase": "^9.22.1"
+  }
+}
