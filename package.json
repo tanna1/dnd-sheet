@@ -16,5 +16,9 @@
   "homepage": "https://github.com/tanna1/dnd-sheet#readme",
   "dependencies": {
     "firebase": "^9.22.1"
+  },
+  "devDependencies": {
+    "webpack": "^5.84.1",
+    "webpack-cli": "^5.1.1"
   }
 }
