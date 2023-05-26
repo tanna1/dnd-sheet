@@ -1,12 +1,13 @@
 const path = require('path'), webpack = require('webpack');
 
 module.exports = {
+  mode: 'development',
   // The entry point file described above
-  entry: './src/index.js',
+  entry: {login: './src/entry/login.js', menu: './src/entry/menu.js', sheet: './src/entry/sheet.js'}, //'./src/index.js',
   // The location of the build folder described above
   output: {
     path: path.resolve(__dirname, 'public', 'dist'),
-    filename: 'bundle.js'
+    filename: '[name]_b.js'
   },
   plugins: [
     new webpack.ProvidePlugin({
