@@ -4,7 +4,8 @@
   "description": "basic d&d character sheet for web",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --mode=development"
+    "build": "webpack",
+    "watch": "webpack --watch"
   },
   "repository": {
     "type": "git",
