@@ -15,8 +15,279 @@
 
     <title>SHEET</title>
 </head>
+<style>
+    .abscoretable, .skilltable {
+        border-collapse: collapse;
+    }
+    .abscoretable th, .abscoretable td {
+      border:1px solid black;
+      width: 3em;
+      height: 2em;
+    }
+    .abscoretable input {
+        width: 3em;
+        text-align: center;
+
+        -webkit-appearance: none;
+        -moz-appearance:textfield;
+        margin: 0;
+    }
+
+    .skilltable th, .skilltable td {
+        border:1px solid black;
+        padding-left: .5em;
+        padding-right: .5em;
+    }
+
+    </style>
 <body>
-    <h1>CHARACTER PAGE!</h1>
+    <h1>Character Sheet</h1>
+    <h2 id="loading_h">Loading</h2>
+    <form id="sheet_form" action="" hidden>
+        <h2 id="name_h">NAME</h2>
+        <table class="abscoretable">
+            <tr>
+                <th>STR</th>
+                <th>DEX</th>
+                <th>CON</th>
+                <th>INT</th>
+                <th>WIS</th>
+                <th>CHA</th>
+            </tr>
+            <tr>
+                <td>
+                    <input class="abscore" id="a_str" type="number" autocomplete="off">
+                </td>
+                <td>
+                    <input class="abscore" id="a_dex" type="number" autocomplete="off">
+                </td>
+                <td>
+                    <input class="abscore" id="a_con" type="number" autocomplete="off">
+                </td>
+                <td>
+                    <input class="abscore" id="a_int" type="number" autocomplete="off">
+                </td>
+                <td>
+                    <input class="abscore" id="a_wis" type="number" autocomplete="off">
+                </td>
+                <td>
+                    <input class="abscore" id="a_cha" type="number" autocomplete="off">
+                </td>
+            </tr>
+                <th id="a_str_mod">0</th>
+                <th id="a_dex_mod">0</th>
+                <th id="a_con_mod">0</th>
+                <th id="a_int_mod">0</th>
+                <th id="a_wis_mod">0</th>
+                <th id="a_cha_mod">0</th>
+        </table>
+        <br>
+        <table class="skilltable">
+            <tr>
+                <th>Skill</th>
+                <th>Prof</th>
+                <th>Mod</th>
+            </tr>
+            <tr>
+                <td>Athletics</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_athletics">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_athletics_mod"></td>
+            </tr>
+            <tr>
+                <td>Acrobatics</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_acrobatics">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_acrobatics_mod"></td>
+            </tr>
+            <tr>
+                <td>Sleight of Hand</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_sleight">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_sleight_mod"></td>
+            </tr>
+            <tr>
+                <td>Stealth</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_stealth">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_stealth_mod"></td>
+            </tr>
+            <tr>
+                <td>Arcana</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_arcana">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_arcana_mod"></td>
+            </tr>
+            <tr>
+                <td>History</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_history">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_history_mod"></td>
+            </tr>
+            <tr>
+                <td>Investigation</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_investigation">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_investigation_mod"></td>
+            </tr>
+            <tr>
+                <td>Nature</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_nature">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_nature_mod"></td>
+            </tr>
+            <tr>
+                <td>Religion</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_religion">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_religion_mod"></td>
+            </tr>
+            <tr>
+                <td>Animal Handling</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_animal">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_animal_mod"></td>
+            </tr>
+            <tr>
+                <td>Insight</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_insight">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_insight_mod"></td>
+            </tr>
+            <tr>
+                <td>Medicine</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_medicine">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_medicine_mod"></td>
+            </tr>
+            <tr>
+                <td>Perception</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_perception">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_perception_mod"></td>
+            </tr>
+            <tr>
+                <td>Surival</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_survival">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_survival_mod"></td>
+            </tr>
+            <tr>
+                <td>Deception</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_deception">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_deception_mod"></td>
+            </tr>
+            <tr>
+                <td>Intimidation</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_intimidation">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_intimidation_mod"></td>
+            </tr>
+            <tr>
+                <td>Performance</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_performance">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_performance_mod"></td>
+            </tr>
+            <tr>
+                <td>Persuasion</td>
+                <td>
+                    <select class="skill" autocomplete="off" id="s_persuasion">
+                        <option value="0">&mdash;</option>
+                        <option value="1">prof</option>
+                        <option value="2">exp</option>
+                    </select>
+                </td>
+                <td id="s_persuasion_mod"></td>
+            </tr>
+        </table>
+    </form>
     <script src="../dist/sheet_b.js"></script>
 </body>
 </html>
